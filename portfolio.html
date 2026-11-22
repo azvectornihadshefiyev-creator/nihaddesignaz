@@ -3,18 +3,58 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Portfolio — Nihad Şəfiyev</title>
-<meta name="description" content="Nihad Şəfiyevin loqo, reklam və çap dizaynı konseptləri.">
+<title>Nihad Şəfiyev — Dizayn portfoliosu</title>
+<meta name="description" content="Nihad Şəfiyevin dizayn portfoliosu. Vizual kimlik, reklam və çap üzrə seçilmiş konseptlər, dizayn qərarları və tətbiqlər.">
 <link rel="icon" href="assets/mark.png">
-<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="pages.css">
-<script>try { document.documentElement.dataset.theme = localStorage.getItem('ns-theme') || 'dark'; } catch {}</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Unbounded:wght@500;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="portfolio.css">
+<script src="projects.js" defer></script>
+<script src="portfolio.js" defer></script>
 </head>
-<body><div class="page-wrap">
-<header class="page-nav"><a class="wordmark" href="index.html"><img src="assets/mark.png" alt="">Nihad Şəfiyev</a><nav class="page-links" aria-label="Əsas menyu"><a href="index.html">Ana səhifə</a><a href="portfolio.html" aria-current="page">Portfolio</a><a href="about.html">Haqqımda</a><a href="index.html#brief">Əlaqə</a></nav></header>
-<main>
-<header class="page-lead"><h1>Portfolio</h1><p>Loqo, reklam vizualı və çap dizaynı üzrə seçilmiş konseptlər.</p></header>
-<div class="page-filters" id="portfolioFilters" aria-label="Layihə kateqoriyaları"></div>
-<div class="page-projects" id="portfolioProjects"></div></main>
-<footer class="page-footer"><span>Nihad Şəfiyev · Bakı</span><a href="index.html#brief">Layihəni müzakirə et →</a></footer>
-</div><script src="projects.js"></script><script src="portfolio.js"></script></body></html>
+<body id="portfolio-top">
+<a href="#works" class="edition-skip">Layihələrə keç</a>
+<header class="edition-header">
+  <a class="edition-logo" href="index.html"><img src="assets/mark.png" width="34" height="34" alt=""><span>Nihad Şəfiyev</span></a>
+  <nav aria-label="Portfolio menyusu"><a href="#works">Layihələr</a><a href="#approach">İş üsulum</a><a href="emekdasliq.html" class="edition-contact">Əməkdaşlıq <span aria-hidden="true">↗</span></a></nav>
+</header>
+<main class="edition">
+  <section class="edition-intro" aria-labelledby="edition-title">
+    <div class="edition-intro-copy">
+      <p class="edition-kicker">Nihad Şəfiyev <span></span> Bakı</p>
+      <h1 id="edition-title">Dizayn<span>portfoliosu</span></h1>
+      <p class="edition-lede">Vizual kimlik, reklam və çap dizaynı. Hər layihədə fikrin nədən başladığına və müxtəlif səthlərdə necə işlədiyinə bax.</p>
+      <a class="edition-button" href="#works">İşlərə bax <span aria-hidden="true">↓</span></a>
+    </div>
+    <a class="edition-cover" href="#puls">
+      <img src="assets/concepts/puls.webp" width="960" height="750" alt="PULS Fitness konsepti — tünd fonda yaşıl işarə və iri tipoqrafiya" fetchpriority="high">
+      <span class="cover-caption"><span>PULS Fitness <small>Vizual kimlik konsepti</small></span><span aria-hidden="true">↗</span></span>
+    </a>
+  </section>
+
+  <section id="works" class="edition-works" aria-labelledby="works-title">
+    <header class="edition-section-head">
+      <h2 id="works-title">Seçilmiş layihələr</h2>
+      <div class="edition-filters" id="portfolioFilters" role="group" aria-label="Layihə kateqoriyaları"></div>
+    </header>
+    <div id="portfolioProjects"><noscript>İş nümunələrini görmək üçün JavaScript-i aktiv et və ya <a href="index.html#work">ana səhifəyə keç</a>.</noscript></div>
+  </section>
+
+  <section class="edition-approach" id="approach" aria-labelledby="approach-title">
+    <header><p class="edition-kicker">İş üsulum</p><h2 id="approach-title">Fikirdən tətbiqə.</h2></header>
+    <ol>
+      <li><strong>Məqsədi müəyyənləşdirirəm</strong><p>Auditoriyanı, materialın harada görünəcəyini və ilk baxışda nə deməli olduğunu aydınlaşdırıram.</p></li>
+      <li><strong>Vizual istiqaməti qururam</strong><p>Tipoqrafiya, rəng və kompozisiya birlikdə işləyənə qədər seçilmiş istiqaməti təkmilləşdirirəm.</p></li>
+      <li><strong>Tətbiqi yoxlayıram</strong><p>Dizaynı telefon, çap və ya reklam səthi üçün yoxlayıb razılaşdırılmış ölçülərdə təhvil verirəm.</p></li>
+    </ol>
+  </section>
+  <section class="edition-next" aria-labelledby="next-title">
+    <h2 id="next-title">Növbəti layihəniz nədir?</h2>
+    <p>Kampaniya, vizual kimlik və ya davamlı dizayn dəstəyi haqqında danışaq.</p>
+    <a href="emekdasliq.html" class="edition-button">Əməkdaşlığa bax <span aria-hidden="true">↗</span></a>
+  </section>
+</main>
+<footer class="edition-footer"><a href="index.html">Nihad Şəfiyev</a><a href="#portfolio-top">Yuxarı qayıt ↑</a></footer>
+</body>
+</html>
