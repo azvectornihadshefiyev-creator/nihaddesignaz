@@ -10,6 +10,7 @@
 <link rel="stylesheet" href="pages.css">
 <script>try { document.documentElement.dataset.theme = localStorage.getItem('ns-theme') || 'dark'; } catch {}</script>
 <link rel="stylesheet" href="profile-demo.css">
+<script src="profile-samples.js" defer></script>
 <script src="profile-demo.js" defer></script>
 </head>
 <body><div class="page-wrap">
@@ -21,28 +22,46 @@
 <article class="bio-card"><h2>İş üsulum</h2><p>Əvvəlcə biznesin məqsədini və materialın harada istifadə olunacağını dəqiqləşdirirəm. Sonra vizual istiqaməti hazırlayıb razılaşdığımız formatlarda təhvil verirəm.</p></article>
 </div><a class="page-cta" href="portfolio.html">Portfolioma bax →</a> <a class="page-cta" href="index.html#services">Xidmətlərə bax →</a>
 <section class="profile-demo" aria-labelledby="pulse-title">
-  <div class="pulse-shell">
-    <header class="pulse-header">
-      <div><span class="pulse-kicker">Nihad Şəfiyev / Profil</span><h2 id="pulse-title">Studiya fəaliyyəti</h2></div>
-      <div class="pulse-actions"><span class="pulse-status"><i></i> Vizual demo</span><button type="button" id="pulse-toggle" hidden>Dayandır</button></div>
-    </header>
-    <div class="pulse-grid">
-      <article class="pulse-chart">
-        <h3>Siqnal xəritəsi</h3><p>Simulyasiya olunan sistem hadisələri</p>
-        <div id="pulse-points" class="pulse-points" aria-hidden="true"></div>
-        <div class="pulse-axis" aria-hidden="true"><span>−30 san</span><span>−20 san</span><span>−10 san</span><span>İndi</span></div>
-      </article>
-      <article class="pulse-meter">
-        <span>Demo gecikməsi</span><strong id="pulse-value">34 <small>ms</small></strong>
-        <div id="pulse-bars" class="pulse-bars" aria-hidden="true"></div>
-      </article>
-    </div>
-    <div class="pulse-log">
-      <h3>Hadisə axını</h3>
-      <table><thead><tr><th scope="col">Hadisə</th><th scope="col">Modul</th><th scope="col">Vəziyyət</th></tr></thead>
-      <tbody id="pulse-log"><tr><td>Önizləmə hazırlandı</td><td>Vitrin</td><td><span>Hazır</span></td></tr><tr><td>Fayllar yoxlanıldı</td><td>Portfolio</td><td><span>Hazır</span></td></tr><tr><td>Panel yeniləndi</td><td>Profil</td><td><span>Hazır</span></td></tr></tbody></table>
+  <div class="pulse-desktop">
+    <section class="pulse-directory" aria-labelledby="directory-title">
+      <header class="directory-header"><span class="directory-mark" aria-hidden="true">N</span><div><strong>Nihad Şəfiyev</strong><small>Studiya profili</small></div></header>
+      <div class="directory-body">
+        <h3 id="directory-title">Son fəaliyyətlər</h3>
+        <p class="pulse-kicker">Simulyasiya olunan sifariş axını</p>
+        <ol id="pulse-log" class="activity-list"></ol>
+      </div>
+    </section>
+    <div class="pulse-shell">
+      <header class="pulse-header">
+        <div><span class="pulse-kicker">Studiya / İdarə paneli</span><h2 id="pulse-title">Müştərilər</h2></div>
+        <div class="pulse-actions"><span class="pulse-status"><i></i> Vizual demo</span><button type="button" id="pulse-toggle" hidden>Dayandır</button></div>
+      </header>
+      <div class="pulse-grid">
+        <article class="pulse-chart">
+          <h3>Sifariş xəritəsi</h3><p>Hər nöqtə bir demo sorğusudur</p>
+          <div class="chart-legend" aria-hidden="true"><span>Yeni</span><span>İşlənir</span><span>Hazır</span></div>
+          <div id="pulse-points" class="pulse-points" aria-label="Son demo sorğuları"></div>
+          <div class="pulse-axis" aria-hidden="true"><span>Əvvəlki</span><span>Son sorğu</span></div>
+        </article>
+        <article class="pulse-meter">
+          <span>Aktiv demo sorğuları</span><strong id="pulse-value">0</strong>
+          <small id="pulse-total"></small>
+          <div id="pulse-bars" class="pulse-bars" aria-hidden="true"></div>
+          <div class="meter-caption">Son 8 sorğu · işin gedişi</div>
+        </article>
+      </div>
+      <section class="pulse-log" aria-labelledby="orders-title">
+        <header class="orders-header"><h3 id="orders-title">Demo sifarişləri</h3><label class="order-search">Axtar<input id="order-search" type="search" placeholder="Ad və ya xidmət"></label></header>
+        <div id="order-filters" class="order-filters" role="group" aria-label="Sifariş vəziyyəti"></div>
+        <table class="orders-table"><thead><tr><th scope="col">Müştəri</th><th scope="col">Xidmət</th><th scope="col">Gediş</th><th scope="col">Vəziyyət</th></tr></thead><tbody id="directory-rows"></tbody></table>
+        <div class="order-pagination"><span id="order-results" role="status"></span><div><button type="button" id="order-prev" aria-label="Əvvəlki səhifə">←</button><button type="button" id="order-next" aria-label="Növbəti səhifə">→</button></div></div>
+      </section>
     </div>
   </div>
+  <dialog class="order-detail" id="order-detail" aria-labelledby="detail-title">
+    <form method="dialog"><button aria-label="Bağla">×</button></form>
+    <span class="pulse-kicker">Demo sifarişi</span><h3 id="detail-title"></h3><div id="detail-content"></div>
+  </dialog>
 </section>
 </main>
 <footer class="page-footer"><span>Nihad Şəfiyev · Bakı</span><a href="index.html#brief">Layihəni müzakirə et →</a></footer>
