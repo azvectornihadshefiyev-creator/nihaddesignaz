@@ -1,0 +1,29 @@
+.logo-lead h1{font-size:clamp(43px,8vw,100px)}
+.logo-gallery{--scene-accent:#d6fc5a;--scene-surface:#1d2921;padding:clamp(16px,3.6vw,44px);border:1px solid var(--line);border-radius:26px;background:radial-gradient(ellipse at 5% 0,#9f76d829,transparent 65%),var(--bg)}
+.logo-gallery-head{display:flex;align-items:end;justify-content:space-between;gap:16px;flex-wrap:wrap;margin-bottom:22px}
+.logo-gallery h2,.logo-packages h2{margin:0;font:800 clamp(25px,4.2vw,42px)/1.08 Outfit,Inter,sans-serif;letter-spacing:-.035em}
+.logo-overline,.logo-context{margin:0 0 6px;color:var(--muted);font-size:13px}
+.logo-picker{display:flex;flex-wrap:wrap;gap:8px}
+.logo-picker button[aria-pressed=true]{border-color:var(--accent);background:#9f76d82e;color:var(--accent)}
+.logo-scenes,.logo-plan-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
+.logo-scene{margin:0;min-width:0}.logo-scene figcaption{margin:9px 0;color:var(--muted);font-size:13px}
+.logo-stage{height:clamp(160px,22vw,250px);position:relative;display:grid;place-items:center;overflow:hidden;border-radius:16px;background:radial-gradient(ellipse at 50% 10%,#736282,#322741 70%);isolation:isolate}
+.logo-stage::after{content:"";position:absolute;inset:0;pointer-events:none;background:linear-gradient(125deg,transparent 35%,#fff2 48%,transparent 63%);translate:-105% 0;transition:translate .65s ease}
+.logo-scene:hover .logo-stage::after{translate:105% 0}
+.logo-phone,.logo-business-card,.logo-sign{background:var(--scene-surface);color:var(--scene-accent);transition:background-color .3s,color .3s}
+.logo-phone{width:min(42%,118px);aspect-ratio:1/1.72;transform:rotate(-9deg);display:grid;place-items:center;border:5px solid #1e1a24;border-radius:17px;box-shadow:9px 13px 24px #0009,0 0 0 2px #b5aabd}
+.logo-phone i{position:absolute;top:7px;width:26%;height:5px;border-radius:10px;background:#18151d}
+.logo-phone img{width:68%;height:auto;filter:drop-shadow(0 0 10px #ffffff22)}
+.logo-stage-card{background:radial-gradient(ellipse at 70% 0,#d6b7a0,#765d69 90%)}
+.logo-business-card{width:76%;aspect-ratio:1.7;transform:rotate(-10deg);border-radius:4px;box-shadow:8px 15px 25px #3320258c;display:grid;place-content:center;justify-items:center;letter-spacing:.15em;font-size:clamp(10px,1.5vw,19px)}
+.logo-business-card img{width:45%;height:auto}
+.logo-stage-sign{background:repeating-linear-gradient(90deg,#564756 0 3px,#615164 3px 32px)}
+.logo-sign{width:84%;min-height:62px;display:flex;align-items:center;justify-content:center;gap:8px;transform:perspective(520px) rotateY(-14deg);border:3px solid #c9b6c88c;border-radius:8px;box-shadow:9px 13px 23px #201727b0;letter-spacing:.14em;font-size:clamp(14px,2.5vw,27px)}
+.logo-sign img{width:23%;height:auto}
+.logo-context{margin:8px 0 0}
+.logo-packages{margin-top:45px;scroll-margin-top:20px}.logo-packages h2{margin-bottom:15px}
+.logo-plan{border:1px solid var(--line);background:#9564cb12;border-radius:16px;padding:18px;display:flex;flex-direction:column;align-items:flex-start}
+.logo-plan h3{margin:0}.logo-plan ul{font-size:14px;line-height:1.6;color:var(--muted);padding-left:17px}.logo-price{font-size:28px;font-weight:700;margin:8px 0 0}.logo-price small{font-size:13px}
+.logo-plan .page-cta{margin-top:auto;font-size:13px}
+@media(max-width:680px){.logo-scenes,.logo-plan-grid{grid-template-columns:1fr}.logo-stage{height:190px}.logo-sign{max-width:240px}.logo-business-card{max-width:220px}}
+@media(prefers-reduced-motion:reduce){.logo-stage::after,.logo-phone,.logo-business-card,.logo-sign{transition:none}.logo-stage::after{display:none}}

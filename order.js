@@ -1,3 +1,15 @@
+const posterDeck = document.querySelector('#poster-deck');
+posterDeck.innerHTML = posterPackages.map(plan => `
+  <article class="poster-card">
+    <img src="${plan.image}" alt="" loading="lazy" width="960" height="750">
+    <div class="poster-card-copy">
+      <h3>${plan.name}</h3><p>${plan.quantity} mövzu · ${posterPrice(plan)}</p>
+      <p>Şəkildə: ${posterOptions(plan)}</p>
+      <strong>${plan.price} <small>AZN</small></strong>
+      <a class="btn sm" href="sifaris.html?paket=${plan.id}">Sifariş ver →</a>
+    </div>
+  </article>`).join('');
+
 const serviceGroup = new Map(Object.entries(serviceGroups).flatMap(([label, ids]) => ids.map(id => [id, label])));
 const offerGrid = document.querySelector('#offers');
 const packageDialog = document.querySelector('#packageDialog');
@@ -18,7 +30,8 @@ offerGrid.innerHTML = catalog.map(service => `
     </div>
     <small class="service-group">${serviceGroup.get(service.id)}</small><h3>${service.title}</h3><p>${service.description}</p>
     <div class="service-bottom"><small>${service.plans[0][1]} AZN-dən</small>
-      <button type="button" class="btn ghost sm" data-service="${service.id}" aria-haspopup="dialog">Paketlərə bax →</button>
+      ${service.id === 'logo' ? '<a class="btn ghost sm" href="loqo.html">Loqo sifarişi və nümunələr →</a>' :
+        `<button type="button" class="btn ghost sm" data-service="${service.id}" aria-haspopup="dialog">Paketlərə bax →</button>`}
     </div>
   </article>`).join('');
 watch();
@@ -85,6 +98,7 @@ packageSelect.innerHTML = '<option value="">Fərdi layihə</option>' + catalog.m
 ).join('');
 
 const directService = new URLSearchParams(location.search).get('xidmet');
+if (directService === 'logo') location.replace('loqo.html');
 const directButton = [...offerGrid.querySelectorAll('[data-service]')].find(button => button.dataset.service === directService);
 
 const summary = document.querySelector('#selectedPlan');
@@ -122,7 +136,7 @@ offerGrid.addEventListener('click', event => {
   packageGrid.innerHTML = openService.plans.map(([name, price, ...items], index) => `
     <article class="pkg-card"><h3>${name}</h3><div class="pkg-price">${price} <small>AZN</small></div>
       <ul>${items.map(item => '<li>' + item + '</li>').join('')}</ul>
-      <button type="button" class="btn sm" data-plan="${index}">Paketi seç →</button>
+      <a class="btn sm" href="sifaris.html?paket=${openService.id}-${index}">Paketi seç →</a>
     </article>`).join('');
   packageDialog.showModal();
 });
@@ -132,17 +146,6 @@ packageDialog.addEventListener('click', event => {
     if (event.clientX < box.left || event.clientX > box.right || event.clientY < box.top || event.clientY > box.bottom) packageDialog.close();
   }
 });
-packageGrid.addEventListener('click', event => {
-  const option = event.target.closest('[data-plan]');
-  if (!option) return;
-  packageSelect.value = openService.id + '-' + option.dataset.plan;
-  updateSummary();
-  packageDialog.close();
-  document.querySelector('#brief').scrollIntoView({behavior: reducedMotion.matches ? 'instant' : 'smooth'});
-  document.querySelector('#fn').focus({preventScroll:true});
-  toast('Paket sifariş formasına əlavə edildi');
-});
-
 const submit = form.querySelector('[type="submit"]');
 if (whatsapp) submit.textContent = 'WhatsApp-da aç →';
 else if (studioContact.email) submit.textContent = 'E-poçtda aç →';

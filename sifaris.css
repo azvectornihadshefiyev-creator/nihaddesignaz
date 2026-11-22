@@ -1,0 +1,22 @@
+.request-layout{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.4fr);gap:20px;align-items:start}
+.request-card{border:1px solid var(--line);border-radius:19px;background:#9564cb12;padding:clamp(17px,3vw,29px)}
+.request-card h2{margin:0;font-size:24px}
+.request-card p,.request-card ul{color:var(--muted);line-height:1.55}
+.request-card #selection-price{font-size:32px;font-weight:700;color:var(--ink);margin:8px 0}
+.request-card .page-cta{margin:5px 4px 0 0}
+.request-card label{display:block;font-weight:600;font-size:14px}
+.request-card label small{font-weight:400;color:var(--muted)}
+.request-card input,.request-card textarea{display:block;width:100%;margin-top:7px;color:var(--ink);background:var(--bg);border:1px solid var(--line);border-radius:10px;padding:11px;font:inherit;font-weight:400}
+.request-card textarea{resize:vertical}
+.request-card input:focus::placeholder,.request-card textarea:focus::placeholder{color:transparent}
+.request-names{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+#request-form{display:grid;gap:13px}
+.request-note,#request-status{font-size:13px;margin:0}
+.request-submit{justify-self:start;color:var(--bg);background:var(--accent);border-color:var(--accent)}
+.request-submit:hover{background:var(--bg)}
+@media(max-width:680px){.request-layout{grid-template-columns:1fr}.request-card{padding:16px}}
+
+.request-submit:disabled{cursor:wait;opacity:.6}
+.request-card select{display:block;width:100%;margin-top:7px;color:var(--ink);background:var(--bg);border:1px solid var(--line);border-radius:10px;padding:11px;font:inherit}
+.request-layout{padding-bottom:clamp(14px,3vw,30px)}
+.request-card{background:radial-gradient(ellipse at 100% 0,#9564cb24,transparent 72%),#9564cb0c}

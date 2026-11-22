@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="az">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Dizayn sifarişi — Nihad Şəfiyev</title>
+<link rel="icon" href="assets/mark.png">
+<link rel="stylesheet" href="pages.css">
+<link rel="stylesheet" href="sifaris.css">
+<script>try{document.documentElement.dataset.theme=localStorage.getItem('ns-theme')||'dark'}catch{}</script>
+<script src="catalog.js" defer></script>
+<script src="sifaris.js" defer></script>
+</head>
+<body><div class="page-wrap">
+<header class="page-nav">
+  <a class="wordmark" href="index.html"><img src="assets/mark.png" alt="">Nihad Şəfiyev</a>
+  <nav class="page-links" aria-label="Əsas menyu"><a href="index.html#poster-packs">Post paketləri</a><a href="index.html#services">Xidmətlər</a><a href="portfolio.html">Portfolio</a></nav>
+</header>
+<main>
+  <header class="page-lead"><h1 id="request-title">Dizayn sifarişi</h1><p>Məlumatları doldur. Hazır mesajı WhatsApp-da açıb mənə göndərə bilərsən.</p></header>
+  <div class="request-layout">
+    <aside class="request-card" aria-labelledby="selection-title">
+      <h2 id="selection-title">Fərdi sifariş</h2>
+      <p id="selection-price" hidden></p>
+      <ul id="selection-details" hidden></ul>
+      <p id="selection-custom">İstədiyin işi və materialların sayını yaz. Qiyməti və təhvil vaxtını söhbətdə dəqiqləşdirək.</p>
+      <p id="selection-notice" role="status" hidden></p>
+      <a class="page-cta" href="index.html#poster-packs">Paketlərə bax</a>
+      <a class="page-cta" id="switch-custom" href="sifaris.html" hidden>Fərdi sifarişə keç</a>
+    </aside>
+    <form id="request-form" class="request-card">
+      <div class="request-names">
+        <label>Ad <input name="firstName" autocomplete="given-name" placeholder="Adınız" required maxlength="70"></label>
+        <label>Soyad <input name="lastName" autocomplete="family-name" placeholder="Soyadınız" required maxlength="70"></label>
+      </div>
+      <label>Şirkətin adı <small>(istəyə görə)</small><input name="company" autocomplete="organization" placeholder="Şirkətin adı" maxlength="120"></label>
+      <label>Biznesin sahəsi <small>(istəyə görə)</small><input name="sector" placeholder="Məsələn, turizm və ya təhsil" maxlength="120"></label>
+      <label id="format-field" hidden>Format <select name="format"><option value="">Formatı seç</option></select></label>
+      <label>Layihə haqqında <textarea name="details" rows="5" required maxlength="1000" placeholder="Nə istəyirsiniz? Mövzu, post sayı, ölçü və varsa təhvil tarixi."></textarea></label>
+      <p class="request-note">Şirkət adından müraciət etmirsinizsə, şirkət sahələrini boş saxlayın. İstədiyinizi WhatsApp-da ətraflı izah edin ki, sizə qısa müddətdə cavab verə bilim.</p>
+      <button type="submit" class="page-cta request-submit" disabled>Sifariş mesajını hazırla</button>
+      <p id="request-status" role="status"></p>
+      <div id="request-output" hidden>
+        <label>Hazır mesaj<textarea id="request-message" rows="6" readonly></textarea></label>
+        <button class="page-cta" id="request-copy" type="button">Mətni kopyala</button>
+      </div>
+      <noscript>Sifariş mesajını hazırlamaq üçün brauzerdə JavaScript-i aktiv et.</noscript>
+    </form>
+  </div>
+</main>
+<footer class="page-footer"><span>Nihad Şəfiyev · Bakı</span><a href="index.html">Ana səhifə</a></footer>
+</div></body></html>

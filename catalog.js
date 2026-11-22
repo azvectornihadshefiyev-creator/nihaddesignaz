@@ -75,3 +75,13 @@ catalog.push(...moreServices.map(([id,title,mark,color,description,plans]) => ({
     name,price,scope,'1 düzəliş raundu',files
   ])
 })));
+
+const posterPackages = [
+  {id:'poster-start', name:'Başlanğıc', quantity:10, price:150, image:'assets/concepts/qat.webp'},
+  {id:'poster-growth', name:'Davamlı', quantity:20, price:250, image:'assets/concepts/puls.webp'},
+  {id:'poster-scale', name:'Geniş', quantity:40, price:450, image:'assets/concepts/forma.webp'}
+];
+const posterTitle = 'Sosial media dizaynı';
+const posterFormats = ['Şəkil','Video'];
+const posterOptions = plan => (plan.quantity * 5) + '–' + (plan.quantity * 7) + ' şəkil variantı';
+const posterPrice = plan => (plan.price / plan.quantity).toFixed(2).replace('.', ',') + ' AZN / mövzu';

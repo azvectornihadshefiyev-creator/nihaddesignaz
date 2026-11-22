@@ -10,7 +10,7 @@ portfolioProjects.innerHTML = studioProjects.map(project => `
     ${projectImage(project)}
     <div class="project-copy"><small>Konsept layihə · ${project.c}</small>
       <h2>${project.t}</h2><p>${project.d}</p>
-      <a class="page-cta" href="index.html?xidmet=${project.service}#services">Bu xidmətin paketləri →</a>
+      <a class="page-cta" href="${project.service === 'logo' ? 'loqo.html' : 'index.html?xidmet=' + project.service + '#services'}">Bu xidmətin paketləri →</a>
     </div>
   </article>`).join('');
 
